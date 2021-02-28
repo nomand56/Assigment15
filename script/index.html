@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.2.9/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/8.2.9/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <!-- two numbers -->
+
+    <div>
+        <form action=""><input type="number" name="" id="v1">
+            <input type="number" name="" id="v2">
+            <input type="button" value="click" Onclick="maxi()">
+        </form>
+        <p id="maxresult"></p>
+        <div>
+            <!--three number   -->
+            <div>
+                <form action=""><input type="number" name="" id="z1">
+                    <input type="number" name="" id="z2">
+                    <input type="number" name="" id="z3">
+                    <input type="button" value="click" Onclick="threeNumberCompar()"> </form>
+                <p id="result1"></p>
+
+
+
+
+                <!-- num sit -->
+                <div class="same"> <input type="number" id="neg">
+                    <input type="button" value="-+0" onclick="numfind()">
+                    <p id="resul"></p>
+                </div>
+                <!-- divisible 5 or not -->
+                <div class="sme"> <input type="number" id="divs">
+                    <input type="button" value="division" onclick="divsion()">
+                    <p id="diver"></p>
+                </div>
+                <!-- even odd -->
+                <div class="sme"> <input type="number" id="evoder">
+                    <input type="button" value="typeCheck" onclick="evod()">
+                    <p id="odder"></p>
+                </div>
+                <!-- leap year -->
+                <div class="sme">
+                    <form><input type="number" id="lyear">
+                        <input type="button" value="year" onclick="yearleap()">
+                        <p id="odye"></p>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <h4 class="text-center text-success">alphabet or not</h4>
+            <h6 class="text-center text-danger" id="aresult"></h6>
+            <form>
+                <div class="form-group">
+                    <input class="form-control" type="text" maxlength="1" placeholder="Enter a character" id="c1" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="button" value="Check " onclick="ca()" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4 class="text-center text-success">vowel or consonat</h4>
+            <h6 class="text-center text-danger" id="aresult2"></h6>
+            <form>
+                <div class="form-group">
+                    <input class="form-control" type="text" maxlength="1" placeholder="Enter a character" id="c2" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="button" value="Check " onclick="ca2()" />
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4 class="text-center text-success">letter digit or special</h4>
+            <h6 class="text-center text-danger" id="cdsresult"></h6>
+            <form>
+                <div class="form-group">
+                    <input class="form-control" type="text" maxlength="1" placeholder="Enter a character" id="c3" />
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="button" value="Check " onclick="cds()" />
+                </div>
+        </div>
+
+
+    </div>
+    <div class="form-group">
+        <input class="btn btn-primary" type="button" value="Check " onclick="cls()" />
+    </div>
+    </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">Copy string 1to2</h4>
+        <h6 id="sresult" class="text-center text-danger"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter first string" id="s1" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter Second string" id="s2" />
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" value="Copy" onclick="copy()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">Concation of strings</h4>
+        <h6 id="sresult2" class="text-center text-danger"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter first string" id="s3" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter Second string" id="s4" />
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" value="Concate" onclick="conca()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">Compare of string</h4>
+        <h6 id="comresult" class="text-center text-danger"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter first string" id="s5" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter Second string" id="s6" />
+            </div>
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" value="Compare" onclick="compare()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">lowercase</h4>
+        <h6 class="text-center text-danger" id="lcresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="li" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="lowercase " onclick="lc()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">Upper case</h4>
+        <h6 class="text-center text-danger" id="ucresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="ui" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Uppercase " onclick="uc()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">Toogle case</h4>
+        <h6 class="text-center text-danger" id="tcresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="ti" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Tooglecase " onclick="tc()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">
+            count digits aphaphets or special character
+        </h4>
+        <h6 class="text-center text-danger" id="scresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="sc" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Count" onclick="stringcount()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">count vowels and consonats</h4>
+        <h6 class="text-center text-danger" id="scresult2"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="sc2" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Count" onclick="stringcount2()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">count words</h4>
+        <h6 class="text-center text-danger" id="scresult3"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="sc3" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Count" onclick="stringcount3()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">reverse string</h4>
+        <h6 class="text-center text-danger" id="rsresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="rs" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Reverse" onclick="reverse()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">palindrome or not</h4>
+        <h6 class="text-center text-danger" id="psresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="ps" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Palindrome" onclick="palindrome()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">Reverse words</h4>
+        <h6 class="text-center text-danger" id="rwresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="rw" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Reverse words" onclick="reversewords()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">
+            first occurrence of a character
+        </h4>
+        <h6 class="text-center text-danger" id="foresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="sf" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" maxlength="1" placeholder="Enter a character to find" id="foc" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Find occurance" onclick="fos()" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3">
+        <h4 class="text-center text-success">
+            last occurrence of a character
+        </h4>
+        <h6 class="text-center text-danger" id="loresult"></h6>
+        <form>
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter a text" id="lf" />
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" maxlength="1" placeholder="Enter a character to find" id="loc" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="button" value="Find occurance" onclick="los()" />
+</body>
+
+</html>
